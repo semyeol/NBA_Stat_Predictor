@@ -1,0 +1,34 @@
+def fetch_player_stats(player_name):
+    # Format player name for URL (e.g., "LeBron James" -> "jamesle01")
+    formatted_name = player_name.lower().replace(' ', '')[:5] + player_name.split()[-1][:2] + "01"
+    url = f"https://www.basketball-reference.com/players/{formatted_name[0]}/{formatted_name}.html"
+
+    response = requests.get(url)
+    if response.status_code != 200:
+        return {"error": "Player not found"}
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Find the per game table (or any relevant table)
+    table = soup.find('table', id='per_game')
+    if not table:
+        return {"error": "Table not found"}
+    
+    # Parse the table
+    df = pd.read_html(str(table))[0]
+    df = df[df['Season'] == '2022-23']  # filter for the latest season
+    if df.empty:
+        return {"error": "Season data not found"}
+
+    player_stats = {
+        'points': df['PTS'].values[0],
+        'rebounds': df['TRB'].values[0],
+        'assists': df['AST'].values[0]
+    }
+
+    return player_stats
+
+# Example usage
+player_name = 'LeBron James'
+stats = fetch_player_stats(player_name)
+print(stats)

@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+}
+
+.main {
+    text-align: center;
+}
+
+.main p {
+    margin-bottom: 5px;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+input {
+    width: 150px;
+}
+
+#team-name-input {
+    width: 160px;
+}
+
+.help-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: black;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%; /* makes the button circular */
+    cursor: pointer; /* changes the cursor when you hover over the button */
+}
+
+.help-text ul {
+    list-style-type: none;
+}
+
+.teams-list {
+    display: flex; /* enables flexbox */
+    justify-content: center; /* centers the columns */
+}
+
+.column-list {
+    column-count: 2; /* creates two columns */
+    column-gap: 1em; /* adds some space between the columns */
+}
+
+.teams-list ul {
+    list-style-type: none; /* removes bullet points */
+    margin: 0; /* removes default margin */
+    padding: 0; /* removes default padding */
+    text-align: left; /* aligns text to the left */
+    width: fit-content; /* makes the width only as wide as the content */
+    margin-bottom: 30px;
+}
+
+#submit-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 50px;
+    height: 21px;
+}
+
+.curry-img {
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}

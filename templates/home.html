@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home_styles.css') }}">
+    </head>
+    <body>
+        <h1>NBA Stat Predictor</h1>
+        <div class="main">
+            <form action="/predict_stats" method="POST">
+                <p>Enter Player Name</p>
+                <input type="text" name="player_name" placeholder=""> 
+                <p>Enter Team Name (Abbreviated) <button id ="help-button" class="help-button" type="button">?</button></p>
+                <input type="text" name="team_name" id="team-name-input" placeholder="">
+                    <div id="help-text" class="help-text" style="display: none;">
+                        <div class="teams-list">
+                            <div class="column-list">
+                                <ul>
+                                    <li>ATL - Atlanta Hawks</li>
+                                    <li>BOS - Boston Celtics</li>
+                                    <li>BKN - Brooklyn Nets</li>
+                                    <li>CHA - Charlotte Hornets</li>
+                                    <li>CHI - Chicago Bulls</li>
+                                    <li>CLE - Cleveland Cavaliers</li>
+                                    <li>DAL - Dallas Mavericks</li>
+                                    <li>DEN - Denver Nuggets</li>
+                                    <li>DET - Detroit Pistons</li>
+                                    <li>GSW - Golden State Warriors</li>
+                                    <li>HOU - Houston Rockets</li>
+                                    <li>IND - Indiana Pacers</li>
+                                    <li>LAC - Los Angeles Clippers</li>
+                                    <li>LAL - Los Angeles Lakers</li>
+                                    <li>MEM - Memphis Grizzlies</li>
+                                    <li>MIA - Miami Heat</li>
+                                    <li>MIL - Milwaukee Bucks</li>
+                                    <li>MIN - Minnesota Timberwolves</li>
+                                    <li>NO - New Orleans Pelicans</li>
+                                    <li>NY - New York Knicks</li>
+                                    <li>OKC - Oklahoma City Thunder</li>
+                                    <li>ORL - Orlando Magic</li>
+                                    <li>PHI - Philadelphia 76ers</li>
+                                    <li>PHX - Phoenix Suns</li>
+                                    <li>POR - Portland Trail Blazers</li>
+                                    <li>SAC - Sacramento Kings</li>
+                                    <li>SAS - San Antonio Spurs</li>
+                                    <li>TOR - Toronto Raptors</li>
+                                    <li>UTA - Utah Jazz</li>
+                                    <li>WAS - Washington Wizards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>    
+                <input type="submit" value="Enter" id="submit-button">
+            </form>
+        </div>
+        <img class="curry-img" src="{{ url_for('static', filename='curry_brooks.jpg') }}" />
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>

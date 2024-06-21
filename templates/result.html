@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html land="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result_styles.css') }}">
+    </head>
+    <body>
+        <h1>Predicted Stats</h1>
+        <div class="main">
+            <p>{{ player_name }} against {{ opp_team_name }}</p>
+            <p>Points: {{ points }}</p>
+            <p>Assists: {{ assists }}</p>
+            <p>Rebounds: {{ rebounds }}</p>
+        </div>
+    </body>
+</html>
