@@ -8,7 +8,8 @@ from config import db_config
 import os
 
 # engine = create_engine(f"postgresql://{db_config['username']}:{db_config['password']}@{db_config['host']}:{db_config['port']}/{db_config['database']}")
-engine = create_engine(os.getenv('DATABASE_URL'))
+DATABASE_URL = os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1)
+engine = create_engine(DATABASE_URL)
 
 def get_past_seasons_stats(player_name):
     first_name, last_name = player_name.split('_')
