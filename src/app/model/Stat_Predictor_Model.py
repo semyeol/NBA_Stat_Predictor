@@ -4,9 +4,11 @@ from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
+import os
 
 def get_data(player_name, opp_team_name_abbr):
-    engine = create_engine('postgresql://postgres:password@localhost:5432/statpredictor')
+    # engine = create_engine('postgresql://postgres:password@localhost:5432/statpredictor')
+    engine = create_engine(os.getenv('DATABASE_URL'))
     past_seasons_table = f"{player_name}_past_seasons_stats"
     against_opp_table = f"{player_name}_against_{opp_team_name_abbr}"
     df1 = pd.read_sql(f"SELECT * FROM {past_seasons_table}", engine)

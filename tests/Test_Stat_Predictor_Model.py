@@ -3,9 +3,9 @@ sys.path.insert(0, '/Users/sem/SWA/Application of SWA/NBA_Stat_Predictor')
 
 import unittest
 import pandas as pd
-from app.model.Stat_Predictor_Model import predict_points
-from app.model.Stat_Predictor_Model import predict_assists
-from app.model.Stat_Predictor_Model import predict_rebounds
+from src.app.model.Stat_Predictor_Model import predict_points
+from src.app.model.Stat_Predictor_Model import predict_assists
+from src.app.model.Stat_Predictor_Model import predict_rebounds
 
 class TestPredictPoints(unittest.TestCase):
     def setUp(self):

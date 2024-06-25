@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 from io import StringIO
 import pandas as pd
-from app.utils.Past_Seasons_Stats_Collector import get_past_seasons_stats
+from src.app.utils.Past_Seasons_Stats_Collector import get_past_seasons_stats
 
 class TestGetPastSeasonsStats(unittest.TestCase):
     @patch('requests.get')
