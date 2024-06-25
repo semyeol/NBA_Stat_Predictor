@@ -1,11 +1,14 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from flask import Flask, render_template, request
-from src.app.model.Stat_Predictor_Model import preprocess_data, predict_points, predict_assists, predict_rebounds   
-from src.app.utils.Past_Seasons_Stats_Collector import get_past_seasons_stats
-from src.app.utils.Against_Opponent_Stats_Collector import get_against_opp_stats
-
-app = Flask(__name__)
-
-app.debug = True
+from app.model.Stat_Predictor_Model import preprocess_data, predict_points, predict_assists, predict_rebounds   
+from app.utils.Past_Seasons_Stats_Collector import get_past_seasons_stats
+from app.utils.Against_Opponent_Stats_Collector import get_against_opp_stats
+            
+app = Flask(__name__, 
+            template_folder=str(Path(__file__).parent.parent.parent / 'templates'),
+            static_folder=str(Path(__file__).parent.parent.parent / 'static'))
 
 @app.route('/')
 def main():

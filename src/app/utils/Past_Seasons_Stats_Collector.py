@@ -2,7 +2,6 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 pd.set_option('display.max_columns', None)
-import numpy as np
 from io import StringIO
 from sqlalchemy import create_engine
 from config import db_config

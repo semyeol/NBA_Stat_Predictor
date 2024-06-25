@@ -3,9 +3,8 @@ sys.path.insert(0, '/Users/sem/SWA/Application of SWA/NBA_Stat_Predictor')
 
 import unittest
 from unittest.mock import patch, MagicMock, call
-from io import StringIO
 import pandas as pd
-from src.app.utils.Against_Opponent_Stats_Collector import get_against_opp_stats
+from app.utils.Against_Opponent_Stats_Collector import get_against_opp_stats
 
 class TestGetAgainstOppStats(unittest.TestCase):
     @patch('requests.get')
