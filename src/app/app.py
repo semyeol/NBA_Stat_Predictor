@@ -29,6 +29,8 @@ def predict_stats_route():
         return render_template('error.html', error_message=df1["error"])
     
     df2 = get_against_opp_stats(player_name, opp_team_name)
+    # print(df2)
+
     if isinstance(df2, dict) and "error" in df2:
         return render_template('error.html', error_message=df2["error"])
     

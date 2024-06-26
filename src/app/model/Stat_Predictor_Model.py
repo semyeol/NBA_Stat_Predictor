@@ -20,7 +20,19 @@ def preprocess_data(df1, df2):
     # fill missing values
     imputer = SimpleImputer(strategy='mean')
     df1[['PTS', 'AST', 'TRB']] = imputer.fit_transform(df1[['PTS', 'AST', 'TRB']])
+
+    # this column would show up in some players' df and was causing errors
+    if 'Unnamed: 31' in df1.columns:
+        df1 = df1.drop('Unnamed: 31', axis=1)
+
     df = df1.merge(df2, on='Player Name', suffixes=('_df1', '_df2'))
+
+    # print("NaN values:")
+    # print(df.isna().any())
+
+    # print("df columns: ")
+    # print(df.columns)
+
     df = convert_to_numeric(df)
     df = calculate_weighted_average(df)
     # drop original dataframes' columns
