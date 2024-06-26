@@ -31,6 +31,9 @@ def predict_stats_route():
     df2 = get_against_opp_stats(player_name, opp_team_name)
     if isinstance(df2, dict) and "error" in df2:
         return render_template('error.html', error_message=df2["error"])
+    
+    if len(df2) < 2:
+        return render_template('error.html', error_message="Player has not played enough games against this team.")
 
     df = preprocess_data(df1, df2)
 

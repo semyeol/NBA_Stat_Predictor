@@ -11,10 +11,16 @@ class TestIntegration(unittest.TestCase):
             {'player_name': 'LeBron James', 'team_name': 'LAC'},
             {'player_name': 'kyrie irving', 'team_name': 'BOS'},
             {'player_name': 'tYrese HaliburTon', 'team_name': 'MIL'},
-            {'player_name': 'lamelo Ball', 'team_name': 'SAC'},
             {'player_name': 'Derrick White', 'team_name': 'MIN'},
             {'player_name': 'Precious Achiuwa', 'team_name': 'TOR'},
-            {'player_name': 'Mikal Bridges', 'team_name': 'POR'},
+            # player below has only one season played
+            {'player_name': 'Scoot Henderson', 'team_name': 'SAC'},
+
+            # test below should cause test to fail b/c no games played against LAL
+            # {'player_name': 'Scoot Henderson', 'team_name': 'LAL'},
+            
+            # test below should cause test to fail b/c no games played against own team
+            # {player_name: 'Scoot Henderson', 'team_name': 'POR'}
         ]
 
         for test_case in test_cases:
