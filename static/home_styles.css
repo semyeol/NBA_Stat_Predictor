@@ -23,7 +23,7 @@ input {
 }
 
 .help-button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: black;
     padding: 2px 6px;
@@ -33,7 +33,7 @@ input {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 50%; /* makes the button circular */
-    cursor: pointer; /* changes the cursor when you hover over the button */
+    cursor: pointer; 
 }
 
 .help-text ul {
@@ -41,21 +41,21 @@ input {
 }
 
 .teams-list {
-    display: flex; /* enables flexbox */
-    justify-content: center; /* centers the columns */
+    display: flex; 
+    justify-content: center; 
 }
 
 .column-list {
-    column-count: 2; /* creates two columns */
-    column-gap: 1em; /* adds some space between the columns */
+    column-count: 2; 
+    column-gap: 1em; 
 }
 
 .teams-list ul {
-    list-style-type: none; /* removes bullet points */
-    margin: 0; /* removes default margin */
-    padding: 0; /* removes default padding */
-    text-align: left; /* aligns text to the left */
-    width: fit-content; /* makes the width only as wide as the content */
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    text-align: left; 
+    width: fit-content; 
     margin-bottom: 30px;
 }
 
